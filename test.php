@@ -1,10 +1,10 @@
 <?php
 session_start();
 $test = $_GET['test'];
-$way = "c:/server/domains/localhost/temp/$test";
+$way = __DIR__ ."/temp/$test";
 if (!file_exists($way))  {
   http_response_code(404);
-  header('HTTP/1.1 404 Not Found');
+//  header('HTTP/1.1 404 Not Found');
 //  echo 'Тест не найден!';
   exit(1);
 }

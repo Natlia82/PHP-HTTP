@@ -10,7 +10,7 @@ $backColor = imagecolorallocate($image, 150, 240, 190);
 $textColor = imagecolorallocate($image, 120, 120, 120);
 imagefill($image, 0, 0, $backColor);
 
-$fonts = 'c:/windows/fonts/arial.ttf';
+$fonts = __DIR__ ."/arial.ttf";
 
 imagettftext($image, 30, 0, 150, 100, $textColor, $fonts, 'СЕРТИФИКАТ');
 imagettftext($image, 15, 0, 150, 150, $textColor, $fonts, 'Удостоверяет, что');

@@ -1,3 +1,22 @@
+<?php
+if (!empty($_FILES)) {
+
+  if (array_key_exists('userfile', $_FILES)) {
+    if ($_FILES['userfile']['error'] === 0) {
+      $name = basename($_FILES["userfile"]["name"]);
+      if (move_uploaded_file($_FILES['userfile']['tmp_name'], "temp/$name"))
+      {
+         //  echo "файл сохранен";
+        //echo '<meta http-equiv="refresh" content="0;URL=/list.php">';
+         header('Location: list.php');
+      }
+
+
+
+    }
+  }
+}
+ ?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -15,24 +34,7 @@
      <br>
    <input type="submit" value="Отправить">
   </form>
-  <?php
-  if (!empty($_FILES)) {
 
-    if (array_key_exists('userfile', $_FILES)) {
-      if ($_FILES['userfile']['error'] === 0) {
-        $name = basename($_FILES["userfile"]["name"]);
-        if (move_uploaded_file($_FILES['userfile']['tmp_name'], "temp/$name"))
-        {
-           //  echo "файл сохранен";
-          echo '<meta http-equiv="refresh" content="0;URL=/list.php">';
-        }
-
-
-
-      }
-    }
-  }
-   ?>
   <br>
   <br>
   <a href="list.php">lest.php</a>

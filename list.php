@@ -1,6 +1,6 @@
 <?php
 
-  $directory = 'c:\server\domains\localhost\temp/';
+  $directory = __DIR__ .'\temp/';
   $scandir = scandir($directory, 1);
 ?>
 
