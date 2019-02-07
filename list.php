@@ -1,6 +1,7 @@
 <?php
 
-  $directory = __DIR__ .'\temp/';
+  $directory = __DIR__ .'/temp/';
+  
   $scandir = scandir($directory, 1);
 ?>
 
